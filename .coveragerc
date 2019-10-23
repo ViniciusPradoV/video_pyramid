@@ -1,0 +1,3 @@
+[run]
+source = video_pyramid
+omit = video_pyramid/test*
