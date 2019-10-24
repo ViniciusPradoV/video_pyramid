@@ -29,27 +29,25 @@
         <div>
             <h4>{{ video.title }}</h4>
             <p>Theme:{{ video.theme }} </p>
-            <p><i class="fa fa-thumbs-up"> {{ video.likes }} </p>
-            <p><i class="fa fa-thumbs-down"> {{ video.dislikes }} </p>
-            <form method="post">
+            <form action="" method="post">
 
-                <input type="hidden" name="name" value={{ video.title }}>
-                <input type="hidden" name="action" value="1">
-                <button type="button"
+                <input type="hidden" name="title" value={{ video.title }}>
+                <input type="hidden" name="like" value="1">
+                <button type="submit"
                         class="btn btn-success"
                         data-loading-text=" ... ">
-                        <i class="fa fa-thumbs-up"></i>
+                        <i class="fa fa-thumbs-up"> {{ video.likes }}</i>
                     </button>
             </form>
 
-            <form method="post">
+            <form action="" method="post">
 
-                <input type="hidden" name="name" value=>
-                <input type="hidden" name="action" value="2">
-                <button type="button"
+                <input type="hidden" name="title" value= {{ video.title }}>
+                <input type="hidden" name="dislike" value="2">
+                <button type="submit"
                         id="testBtn"
                         class="btn btn-danger">
-                        <i class="fa fa-thumbs-down"></i></button>
+                        <i class="fa fa-thumbs-down"></i>{{ video.dislikes }}</button>
             </form>
 
         </div>
