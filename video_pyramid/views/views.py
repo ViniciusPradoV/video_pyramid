@@ -9,8 +9,7 @@ class Database(object):
         self.collection = self.db["videos"]
 
     def insert_video(self, title, theme):
-        video =
-        {
+        video = {
         "title": title,
         "theme": theme,
         "like": 0,
@@ -35,7 +34,8 @@ class Views:
             theme = str(self.request.POST.get('theme'))
             db.insert_video(title, theme)
 
-            videos = []
-            for video in self.collection.find():
+        videos = []
+        for video in db.collection.find():
             videos.append(video)
+        videos = {"videos": videos}
         return videos
