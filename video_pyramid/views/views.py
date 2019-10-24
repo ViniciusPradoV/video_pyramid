@@ -12,8 +12,8 @@ class Database(object):
         video = {
         "title": title,
         "theme": theme,
-        "like": 0,
-        "dislike": 0,
+        "likes": 0,
+        "dislikes": 0,
         "total_score": 0,
 
         }

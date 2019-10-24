@@ -4,9 +4,11 @@
 
 <div class="container">
 
+
+
     <h3 class="titles">Post a video</h3>
 
-    <form  action="/" method="post">
+    <form  action="" method="post">
         <div class="form-group">
             <label for="name">Title</label>
             <input type="text" class="form-control" name="title" placeholder="Title">
@@ -16,29 +18,28 @@
             <input type="text" class="form-control"name="theme" placeholder="Theme">
         </div>
 
-        <button type="submit" class="btn btn-primary" name="form.post" type="submit" value="Create">Submit</button>
+        <button type="submit" class="btn btn-success" name="form.post" type="submit" value="Create">Submit</button>
     </form>
 
-    <h3 class="titles">Videos List</h3>
+    <h3 class="titles">Videos</h3>
 
     {% for video in videos %}
 
-    <div class="card" style="width: 40%" align="center">
-        <img class="card-img-top">
-        <div class="card-body" align-items="center">
-            <h4 class="card-title"></h4>
-            <p class="card-text">Theme: </p>
-            <p class="card-text"><i class="fa fa-thumbs-up" aria-hidden="true">: </p>
-            <p class="card-text"><i class="fa fa-thumbs-down" aria-hidden="true">: </p>
+    <div class="container">
+        <div>
+            <h4>{{ video.title }}</h4>
+            <p>Theme:{{ video.theme }} </p>
+            <p><i class="fa fa-thumbs-up"> {{ video.likes }} </p>
+            <p><i class="fa fa-thumbs-down"> {{ video.dislikes }} </p>
             <form method="post">
 
-                <input type="hidden" name="name" value="">
+                <input type="hidden" name="name" value={{ video.title }}>
                 <input type="hidden" name="action" value="1">
                 <button type="button"
                         class="btn btn-success"
                         data-loading-text=" ... ">
-                        <i class="fa fa-thumbs-up" aria-hidden="true"></i>
-                    4</button>
+                        <i class="fa fa-thumbs-up"></i>
+                    </button>
             </form>
 
             <form method="post">
@@ -47,10 +48,8 @@
                 <input type="hidden" name="action" value="2">
                 <button type="button"
                         id="testBtn"
-                        class="btn btn-success"
-                        data-loading-text=" ... ">
-                        <i class="fa fa-thumbs-down" aria-hidden="true"></i>
-                    4</button>
+                        class="btn btn-danger">
+                        <i class="fa fa-thumbs-down"></i></button>
             </form>
 
         </div>
